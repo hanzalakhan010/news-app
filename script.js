@@ -9,10 +9,10 @@ function loadNews() {
             document.getElementById('news').innerHTML = ''
             document.getElementById('info').innerHTML = `All news from ${country}`
             if (data.totalResults > 0) {
-                for (let i = 0; i <= data.articles.length; i++) {
+                for (let i = 0; i < data.articles.length; i++) {
                     document.getElementById('news').innerHTML += `
                 <div class = 'card'>
-                <img class = 'newsImg' src = ${data.articles[i].urlToImage} alt = 'Image Not Found'>
+                <img class = 'newsImg' src = ${data.articles[i]["urlToImage"]} alt = 'Image Not Found'>
                 <div>
                 <a target ='_blank'href = ${data.articles[i].url}><h3>${data.articles[i].title ? data.articles[i].title : ''}</h3></a>
                 <p>${data.articles[i].description ? data.articles[i].description : ''}</p>
@@ -38,10 +38,10 @@ function selectCateogory(category) {
             selected = category
             console.log(selected)
             if (data.totalResults > 0) {
-                for (let i = 0; i <= data.articles.length; i++) {
+                for (let i = 0; i < data.articles.length; i++) {
                     document.getElementById('news').innerHTML += `
                 <div class = 'card'>
-                <img class = 'newsImg' src = ${data.articles[i].urlToImage} alt = 'Image Not Found'>
+                <img class = 'newsImg' src = ${data.articles[i]['urlToImage']} alt = 'Image Not Found'>
                 <div>
                 <a target ='_blank'href = ${data.articles[i].url}><h3>${data.articles[i].title ? data.articles[i].title : ''}</h3></a>
                 <p>${data.articles[i].description ? data.articles[i].description : ''}</p>
